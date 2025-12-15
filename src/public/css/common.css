@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 90px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+img{
+    width: 100%;
+}
+
+h1, h2, p, a {
+    margin: 0;
+}
+
+.header {
+    width:100%;
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+    height: 80px;
+    padding: 0 30px;
+    position: sticky;
+    z-index: var(--mer-z-index-navigation-top);
+    top: 0px;
+}
+
+.header__inner {
+    margin: 0 auto;
+    max-width: 1500px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    width: 100%;
+    max-width: 370px;
+    height: auto;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav__item a,
+.header-nav__button {
+    text-decoration: none;
+    color: #fff;
+    background: none;
+    border: none;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: opacity 0.2s ease;
+}
+
+.header-nav__item a:hover,
+.header-nav__button:hover {
+    opacity: 0.7;
+}
+
+.header-nav__button {
+    padding: 0;
+}
+
+/* 勤怠画面 */
+.attendance__content {
+    margin: 91px auto 0;
+    max-width: 900px;
+}
+
+.cotents-title {
+    padding: 0 0 0 20px;
+    color: #000;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    border-left: solid 8px #000;
+    background: transparent;
+}
+
+@media screen and (max-width: 900px) {
+    .attendance__content {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .header {
+        height: 60px;
+    }
+
+    .header__logo {
+        max-width: 200px;
+        width: 50%;
+        height: auto;
+    }
+
+    .header__nav {
+        gap: 20px;
+    }
+
+    .header-nav__item a,
+    .header-nav__button {
+        font-size: 16px;
+    }
+
+}

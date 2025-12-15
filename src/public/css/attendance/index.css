@@ -1,0 +1,227 @@
+body {
+    background-color: #F0EFF2;
+}
+
+.attendance__calendar {
+    margin: 43px auto 46px;
+    padding: 17px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+}
+
+/* カレンダー */
+.calendar__current {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.calendar__current::before {
+    content: "";
+    display: inline-block;
+    background: url(../../../images/icon_calendar.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+}
+
+.calendar__btn {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: #737373;
+    cursor: pointer;
+}
+
+.calendar__btn.prev::before {
+    content: "";
+    display: inline-block;
+    background: url(../../../images/icon_arrow.png) no-repeat center/cover;
+    width: 20px;
+    height: 15px;
+    margin-right: 6px;
+    opacity: 0.3;
+}
+
+.calendar__btn.next::after {
+    content: "";
+    display: inline-block;
+    background: url(../../../images/icon_arrow.png) no-repeat center/cover;
+    width: 20px;
+    height: 15px;
+    margin-left: 6px;
+    transform: scaleX(-1);
+    opacity: 0.3;
+}
+
+/* タブ切り替え */
+.tab_content {
+    display: none;
+}
+
+#tab1:checked~#content1 {
+    display: block;
+}
+
+#tab2:checked~#content2 {
+    display: block;
+}
+
+.applications__tub label {
+    font-weight: 400;
+}
+
+#tab1:checked~.applications__tub label[for="tab1"] {
+    font-weight: 700;
+}
+
+#tab2:checked~.applications__tub label[for="tab2"] {
+    font-weight: 700;
+}
+
+.applications__tub {
+    margin: 61px 0 45px 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border-bottom: 1px solid #000;
+    width: 100wh;
+    list-style: none;
+}
+
+.applications__list {
+    margin-left: 57px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    letter-spacing: 0.15em;
+}
+
+.applications__list:last-child {
+    margin-left: 106px;
+}
+
+.applications__list input[type="radio"] {
+    display: none;
+}
+
+/* 勤怠テーブル */
+.attendance__table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.attendance__table th:nth-child(1),
+.attendance__table td:nth-child(1) {
+    width: 18%;
+}
+
+.attendance__table th:nth-child(6),
+.attendance__table td:nth-child(6) {
+    width: 18%;
+}
+
+.attendance__table th {
+    padding: 12px 0;
+    text-align: center;
+    border-bottom: 3px solid #E1E1E1;
+    font-size: 16px;
+    font-weight: 700;
+    color: #737373;
+    letter-spacing: 0.15em;
+}
+
+.attendance__table td {
+    padding: 12px 0;
+    text-align: center;
+    border-bottom: 2px solid #E1E1E1;
+    font-size: 16px;
+    font-weight: 700;
+    color: #737373;
+    letter-spacing: 0.15em;
+}
+
+.attendance__table tr:last-child td {
+    border-bottom: none;
+}
+
+.date {
+    letter-spacing: normal !important;
+}
+
+.detail__link {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* スタッフ一覧レイアウト */
+.staff__wrap {
+    margin-top: 94px;
+}
+
+.staff__wrap th:nth-child(1),
+.staff__wrap td:nth-child(1),
+.staff__wrap th:nth-child(2),
+.staff__wrap td:nth-child(2),
+.staff__wrap th:nth-child(3),
+.staff__wrap td:nth-child(3) {
+    width: 35%;
+}
+
+.staff__wrap th:nth-child(1),
+.staff__wrap td:nth-child(1) {
+    padding-left: 10%;
+}
+
+.staff__wrap th:nth-child(3),
+.staff__wrap td:nth-child(3) {
+    padding-right: 10%;
+}
+
+/* CSV出力ボタン */
+.button-wrapper {
+    margin-top: 60px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.csv-button {
+    padding: 12px 40px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 850px) {
+
+    .staff__wrap th,
+    .staff__wrap td,
+    .staff__wrap a {
+        font-size: 14px;
+    }
+
+    .staff__wrap th:nth-child(1),
+    .staff__wrap td:nth-child(1),
+    .staff__wrap th:nth-child(3),
+    .staff__wrap td:nth-child(3) {
+        padding: 0;
+    }
+
+}

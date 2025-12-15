@@ -1,0 +1,79 @@
+body {
+    background-color: #F0EFF2;
+}
+
+.attendance__content {
+    margin: 209px auto 0;
+    text-align: center;
+}
+
+.attendance__status {
+    display: inline-block;
+    margin-bottom: 32px;
+    padding: 9px 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #696969;
+    letter-spacing: 0.15em;
+
+    background-color: #C8C8C8;
+    border-radius: 50px;
+}
+
+.attendance__date {
+    margin-bottom: 32px;
+    font-size: 40px;
+    font-weight: 400;
+    color: #000;
+}
+
+.attendance__time {
+    margin-bottom: 87px;
+    font-size: 80px;
+    font-weight: 700;
+    color: #000;
+    font-feature-settings: "tnum" 1;
+}
+
+.time-font {
+    display: inline-block;
+    transform: translateY(-2px);
+}
+
+.button__item {
+    display: flex;
+    justify-content: center; /* 中央寄せ */
+    align-items: center;
+    gap: 82px; /* ← ここでボタン間の間隔を設定 */
+}
+
+.attendance__button {
+    padding: 19px 76px;
+    background-color: #000;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+}
+
+.attendance__break-button {
+    padding: 19px 58px;
+    background-color: #fff;
+    border: none;
+    border-radius: 20px;
+    color: #000;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+}
+
+.attendance__clock-out-button {
+    font-size: 26px;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: 0.15em;
+}
