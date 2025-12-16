@@ -213,14 +213,14 @@ php artisan db:seed
 ### データベースの確認
 
 ```bash
-docker exec -it free-market-app-mysql-1 mysql -u root -p
+docker exec -it attendance-system-mysql-1 mysql -u root -p
 SHOW DATABASES;
 ```
 
 ### データベースの作成
 
 ```bash
-docker exec -it free-market-app-mysql-1 bash
+docker exec -it attendance-system-mysql-1 bash
 mysql -u root -p
 CREATE DATABASE demo_test;
 exit
@@ -232,25 +232,25 @@ exit
    database.php を開き、以下の設定になっていることを確認してください。
 
 ```bash
-'mysql' => [
-    'driver' => 'mysql',
-    'url' => env('DB_URL'),
-    'host' => env('DB_HOST', '127.0.0.1'),
-    'port' => env('DB_PORT', '3306'),
-    'database' => env('DB_DATABASE', 'laravel'),
-    'username' => env('DB_USERNAME', 'root'),
-    'password' => env('DB_PASSWORD', ''),
-    'unix_socket' => env('DB_SOCKET', ''),
-    'charset' => env('DB_CHARSET', 'utf8mb4'),
-    'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
-    'prefix' => '',
-    'prefix_indexes' => true,
-    'strict' => true,
-    'engine' => null,
-    'options' => extension_loaded('pdo_mysql') ? array_filter([
-        PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-    ]) : [],
-],
+    'mysql_test' => [
+        'driver' => 'mysql',
+        'url' => env('DB_URL'),
+        'host' => env('DB_HOST', '127.0.0.1'),
+        'port' => env('DB_PORT', '3306'),
+        'database' => env('DB_DATABASE', 'demo_test'),
+        'username' => env('DB_USERNAME', 'root'),
+        'password' => env('DB_PASSWORD', 'root'),
+        'unix_socket' => env('DB_SOCKET', ''),
+        'charset' => env('DB_CHARSET', 'utf8mb4'),
+        'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
+        'prefix' => '',
+        'prefix_indexes' => true,
+        'strict' => true,
+        'engine' => null,
+        'options' => extension_loaded('pdo_mysql') ? array_filter([
+            PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+        ]) : [],
+    ],
 ```
 
 3. .env.testing ファイルの文頭部分にある APP_ENV と APP_KEY を編集します。<br>
