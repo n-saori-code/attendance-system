@@ -12,7 +12,7 @@ git clone git@github.com:n-saori-code/attendance-system.git
 
 2. DockerDesktop アプリを立ち上げる
 
-3. クローンしたディレクトリ(free-market-app)内に移動し、以下のコマンドで Docker コンテナをビルドして起動
+3. クローンしたディレクトリ(attendance-system)内に移動し、以下のコマンドで Docker コンテナをビルドして起動
 
 ```bash
 docker-compose up -d --build
@@ -109,35 +109,20 @@ php artisan db:seed
 
 ### 管理者アカウント
 
-- ユーザー名：管理者ユーザー
-- メールアドレス：admin@example.com
-- パスワード：adminpassword
+| ユーザー名     | メールアドレス    | パスワード    |
+| -------------- | ----------------- | ------------- |
+| 管理者ユーザー | admin@example.com | adminpassword |
 
 ### 一般ユーザーアカウント
 
-- ユーザー名：西 伶奈
-- メールアドレス：reina.n@coachtech.com
-- パスワード：password001
-
-- ユーザー名：山田 太郎
-- メールアドレス：taro.y@coachtech.com
-- パスワード：password002
-
-- ユーザー名：増田 一世
-- メールアドレス：issei.m@coachtech.com
-- パスワード：password003
-
-- ユーザー名：山本 敬吉
-- メールアドレス：keikichi.y@coachtech.com
-- パスワード：password004
-
-- ユーザー名：秋田 朋美
-- メールアドレス：tomomi.a@coachtech.com
-- パスワード：password005
-
-- ユーザー名：中西 教夫
-- メールアドレス：norio.n@coachtech.com
-- パスワード：password006
+| ユーザー名 | メールアドレス           | パスワード  |
+| ---------- | ------------------------ | ----------- |
+| 西 伶奈    | reina.n@coachtech.com    | password001 |
+| 山田 太郎  | taro.y@coachtech.com     | password002 |
+| 増田 一世  | issei.m@coachtech.com    | password003 |
+| 山本 敬吉  | keikichi.y@coachtech.com | password004 |
+| 秋田 朋美  | tomomi.a@coachtech.com   | password005 |
+| 中西 教夫  | norio.n@coachtech.com    | password006 |
 
 ## テーブル仕様
 
@@ -339,7 +324,7 @@ vendor/bin/phpunit tests/Feature
 
 ## ER 図
 
-![alt](er.png)
+![勤怠管理アプリ ER図](er.png)
 
 ## URL
 
@@ -348,3 +333,8 @@ vendor/bin/phpunit tests/Feature
 - 管理者ログイン：http://localhost/admin/login
 - phpMyAdmin：http://localhost:8080/
 - Mailhog：http://localhost:8025
+
+## 備考
+
+一般ユーザーの申請一覧画面の「承認済み」に移動した勤怠詳細の仕様に関しては、<br>
+記載がなかったため、申請内容が更新された編集可能な勤怠詳細に戻るようにしています。
