@@ -14,6 +14,14 @@ class AdminTest extends TestCase
 {
     use RefreshDatabase;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+        Carbon::setTestNow(
+            Carbon::create(2025, 12, 16, 0, 0, 0, 'Asia/Tokyo')
+        );
+    }
+
     // ------------------------------
     // 勤怠一覧情報取得機能（管理者）
     // ------------------------------

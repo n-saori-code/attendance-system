@@ -34,8 +34,6 @@ mysql:
 phpmyadmin:
     platform: linux/amd64
 
-# Dockerfile
-FROM --platform=linux/amd64 php:8.1-fpm
 ```
 
 **Laravel 環境構築**

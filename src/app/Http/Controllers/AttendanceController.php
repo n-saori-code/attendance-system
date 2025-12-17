@@ -218,10 +218,16 @@ class AttendanceController extends Controller
     }
 
     ##勤怠新規登録申請処理
-    public function store(ApplicationRequest $request, $id)
+    public function store(ApplicationRequest $request)
     {
-        $attendance = Attendance::findOrFail($id);
         $user = Auth::user();
+
+        $attendance = Attendance::firstOrCreate(
+            [
+                'user_id' => $user->id,
+                'date' => Carbon::parse($request->date),
+            ]
+        );
 
         $application = AttendanceApplication::create([
             'user_id' => $user->id,
@@ -248,8 +254,6 @@ class AttendanceController extends Controller
                 'break_end'   => $end ?: null,
             ]);
         }
-
-        $isPending = true;
 
         return redirect()->route('attendance.detail', ['id' => $attendance->id]);
     }

@@ -10,6 +10,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Validation\ValidationException;
 
 
 class AuthController extends Controller
@@ -28,11 +29,16 @@ class AuthController extends Controller
     ##ログイン認証
     public function login(LoginRequest $request)
     {
-        if (Auth::attempt($request->only('email', 'password'))) {
-            $request->session()->regenerate();
-            session(['from_login' => true]);
-            return redirect()->route('attendance.index');
+        if (! Auth::attempt($request->only('email', 'password'))) {
+            throw ValidationException::withMessages([
+                'password' => 'ログイン情報が登録されていません',
+            ]);
         }
+
+        $request->session()->regenerate();
+        session(['from_login' => true]);
+
+        return redirect()->route('attendance.index');
     }
 
     ##ログアウト

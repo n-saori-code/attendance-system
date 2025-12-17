@@ -52,7 +52,7 @@ Route::middleware(['auth', 'verified'])->group(
         Route::get('/attendance/detail/{id?}', [AttendanceController::class, 'detail'])->name('attendance.detail');
 
         ##勤怠新規登録申請
-        Route::post('/attendance/store/{id}', [AttendanceController::class, 'store'])->name('attendance.store');
+        Route::post('/attendance/store', [AttendanceController::class, 'store'])->name('attendance.store');
 
         ##勤怠更新申請
         Route::post('/attendance/update/{id}', [AttendanceController::class, 'update'])->name('attendance.update');

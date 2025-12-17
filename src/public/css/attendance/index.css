@@ -38,6 +38,7 @@ body {
     font-weight: 700;
     color: #737373;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .calendar__btn.prev::before {

@@ -12,8 +12,11 @@
 <div class="attendance__content">
     <h1 class="cotents-title">勤怠詳細</h1>
 
-    <form action="{{ $attendance->id ? route('attendance.update', ['id' => $attendance->id]) : route('attendance.store') }}" method="POST" class="attendance__form">
+    <form action="{{ $attendance->id
+    ? route('attendance.update', ['id' => $attendance->id])
+    : route('attendance.store') }}" method="POST" class="attendance__form">
         @csrf
+        <input type="hidden" name="date" value="{{ $attendance->date?->format('Y-m-d') }}">
         <div class="attendance__form-content">
 
             <div class="attendance__form-item">

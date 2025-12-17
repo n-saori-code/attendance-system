@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\AdminLoginRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class AdminAuthController extends Controller
 {
@@ -15,15 +16,17 @@ class AdminAuthController extends Controller
 
     public function login(AdminLoginRequest $request)
     {
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::guard('admin')->attempt($credentials)) {
-
-            $request->session()->regenerate();
-            return redirect()->route('admin.attendance.list');
+        if (! Auth::guard('admin')->attempt(
+            $request->only('email', 'password')
+        )) {
+            throw ValidationException::withMessages([
+                'password' => 'ログイン情報が登録されていません',
+            ]);
         }
 
-        return back();
+        $request->session()->regenerate();
+
+        return redirect()->route('admin.attendance.list');
     }
 
     public function logout(Request $request)
