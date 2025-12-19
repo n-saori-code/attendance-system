@@ -34,6 +34,9 @@ mysql:
 phpmyadmin:
     platform: linux/amd64
 
+  mailhog:
+    platform: linux/amd64
+
 ```
 
 **Laravel 環境構築**
