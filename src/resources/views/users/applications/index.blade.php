@@ -14,12 +14,12 @@ use Illuminate\Support\Str;
 @endphp
 
 <div class="attendance__content">
-    <h1 class="cotents-title">申請一覧</h1>
+    <h1 class="contents-title">申請一覧</h1>
 
     <input type="radio" name="tab" id="tab1" checked hidden>
     <input type="radio" name="tab" id="tab2" hidden>
 
-    <ul class="applications__tub">
+    <ul class="applications__tab">
         <li class="applications__list"><label for="tab1">承認待ち</label></li>
         <li class="applications__list"><label for="tab2">承認済み</label></li>
     </ul>

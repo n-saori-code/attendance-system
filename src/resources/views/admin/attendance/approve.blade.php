@@ -10,7 +10,7 @@
 
 @section('content')
 <div class="attendance__content">
-    <h1 class="cotents-title">勤怠詳細</h1>
+    <h1 class="contents-title">勤怠詳細</h1>
 
     <form action="{{ route('admin.application.approve', ['attendance_correct_request_id' => $application->id]) }}" method="POST">
         @csrf

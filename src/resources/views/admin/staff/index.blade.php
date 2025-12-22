@@ -10,7 +10,7 @@
 
 @section('content')
 <div class="attendance__content">
-    <h1 class="cotents-title">スタッフ一覧</h1>
+    <h1 class="contents-title">スタッフ一覧</h1>
 
     <table class="attendance__table staff__wrap">
         <thead>

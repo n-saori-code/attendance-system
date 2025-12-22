@@ -175,7 +175,7 @@ php artisan db:seed
 | clock_in      | time            |             |            |          |                 |
 | clock_out     | time            |             |            |          |                 |
 | remarks       | text            |             |            |          |                 |
-| status        | varchar(50)     |             |            | ◯        |                 |
+| status        | enum            |             |            | ◯        |                 |
 | created_at    | timestamp       |             |            |          |                 |
 | updated_at    | timestamp       |             |            |          |                 |
 

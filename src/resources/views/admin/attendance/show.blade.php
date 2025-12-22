@@ -10,7 +10,7 @@
 
 @section('content')
 <div class="attendance__content">
-    <h1 class="cotents-title">勤怠詳細</h1>
+    <h1 class="contents-title">勤怠詳細</h1>
 
     <form action="{{ $attendance->id ? route('admin.attendance.update', ['id' => $attendance->id]) : route('admin.attendance.store') }}"
         method="POST" class="attendance__form">

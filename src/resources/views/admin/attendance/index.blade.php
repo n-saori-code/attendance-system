@@ -10,7 +10,7 @@
 
 @section('content')
 <div class="attendance__content">
-    <h1 class="cotents-title">{{ $date->format('Y年n月j日') }}の勤怠</h1>
+    <h1 class="contents-title">{{ $date->format('Y年n月j日') }}の勤怠</h1>
 
     <div class="attendance__calendar">
         <a href="{{ route('admin.attendance.list', ['date' => $prevDate]) }}" class="calendar__btn prev">前日</a>
